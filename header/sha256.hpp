@@ -1,3 +1,6 @@
+#ifndef SHA256
+#define SHA256
+
 #include <string>
 #include <string.h>
 #include <iostream>
@@ -30,7 +33,7 @@ const unsigned int K[64] = {
 const unsigned int H0[] = {
 	0x6a09e667UL, 0xbb67ae85UL, 0x3c6ef372UL, 0xa54ff53aUL, 0x510e527fUL, 0x9b05688cUL, 0x1f83d9abUL, 0x5be0cd19UL};
 
-class SHA256
+class Sha256
 {
 public:
 	std::string calc_hex(unsigned int i);
@@ -41,3 +44,5 @@ public:
 	unsigned char **padding(char *input);
 	void compute(unsigned char **block, unsigned int *H);
 };
+
+#endif

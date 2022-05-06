@@ -1,4 +1,6 @@
+#ifndef BLOCK
 #include "../header/block.hpp"
+#endif
 
 Block::Block(string &data, string &previousHash)
 	: _data(), _hash(), _previousHash(), _timeStamp()
@@ -17,7 +19,7 @@ string Block::Hash()
 	const char *message = str.c_str();
 	unsigned int H[INIT_HASH_LENGTH];
 
-	SHA256 sha256;
+	Sha256 sha256;
 
 	unsigned char **result = sha256.padding((char *)message);
 

@@ -1,8 +1,13 @@
+#ifndef BITCOIN
+#define BITCOIN
+
 #include <string>
 #include <iostream>
 #include <vector>
 
+#ifndef BLOCK
 #include "../header/block.hpp"
+#endif
 
 using namespace std;
 
@@ -19,3 +24,5 @@ public:
 	void chain(string data);
 	bool isValidBlockChain();
 };
+
+#endif

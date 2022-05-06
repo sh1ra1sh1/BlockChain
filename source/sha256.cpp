@@ -1,8 +1,10 @@
+#ifndef SHA256
 #include "../header/sha256.hpp"
+#endif
 
 #define MESSAGE_BLOCK_SIZE 64
 
-unsigned char **SHA256::padding(char *input)
+unsigned char **Sha256::padding(char *input)
 {
 	int intLength = strlen(input);
 	int intBlock = (intLength + 9 + (MESSAGE_BLOCK_SIZE - 1)) / MESSAGE_BLOCK_SIZE;
@@ -67,7 +69,7 @@ unsigned char **SHA256::padding(char *input)
 	return output;
 }
 
-void SHA256::free_block(unsigned char **block)
+void Sha256::free_block(unsigned char **block)
 {
 	int intI = 0;
 	while (block[intI] != NULL)
@@ -78,7 +80,7 @@ void SHA256::free_block(unsigned char **block)
 	free(block);
 }
 
-string SHA256::calc_hash(unsigned int *H)
+string Sha256::calc_hash(unsigned int *H)
 {
 	string ss = "";
 	for (int intI = 0; intI < INIT_HASH_LENGTH; intI++)
@@ -89,7 +91,7 @@ string SHA256::calc_hash(unsigned int *H)
 	return ss;
 }
 
-string SHA256::calc_hex(unsigned int i)
+string Sha256::calc_hex(unsigned int i)
 {
 	stringstream s;
 	unsigned int h;
@@ -109,7 +111,7 @@ string SHA256::calc_hex(unsigned int i)
 	return s.str();
 }
 
-void SHA256::compute(unsigned char **block, unsigned int *H)
+void Sha256::compute(unsigned char **block, unsigned int *H)
 {
 	int N = 0;
 	while (block[N] != NULL)

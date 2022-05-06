@@ -1,4 +1,6 @@
+#ifndef TIME
 #include "../header/time.hpp"
+#endif
 
 GetDateTime::GetDateTime()
 	: _t(), _localTime(), _ss(), _s()

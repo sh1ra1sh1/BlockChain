@@ -1,3 +1,6 @@
+#ifndef TIME
+#define TIME
+
 #include <iomanip>
 #include <iostream>
 #include <string>
@@ -19,3 +22,5 @@ public:
 	void set();
 	string get() const;
 };
+
+#endif

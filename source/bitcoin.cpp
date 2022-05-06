@@ -1,4 +1,6 @@
+#ifndef BITCOIN
 #include "../header/bitcoin.hpp"
+#endif
 
 Bitcoin::Bitcoin()
 	: _blockchain(), _previousHash2()
@@ -22,7 +24,7 @@ void Bitcoin::chain(string data)
 	_previousHash2 = block.Hash();
 	_blockchain.push_back(_previousHash2);
 
-	cout << "data: " << data << endl;
+	// cout << "data: " << data << endl;
 	cout << "previousHash: " << previousHash << endl;
 	cout << "Hash: " << _previousHash2 << endl;
 }

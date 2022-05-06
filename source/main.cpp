@@ -1,4 +1,6 @@
+#ifndef BITCOIN
 #include "../header/bitcoin.hpp"
+#endif
 
 int main()
 {
